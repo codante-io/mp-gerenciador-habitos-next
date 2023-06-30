@@ -7,7 +7,6 @@ Aprenda a usar o poder da versão 13 do Next.js construindo um gerenciador de h�
 - Desenvolva a aplicação mobile-first.
 
 ### Página inicial
-<img src="https://github.com/codante-io/mp-gerenciador-habitos-next/assets/6475893/44b3ac0e-6ff4-4daf-bc58-07a32b21f19c" width="200" />
 
 - Implemente a funcionalidade de exibir uma lista de hábitos.
   - Cada hábito deve mostrar os últimos 7 dias, com um check se o hábito foi feito, um "x" se ele não foi feito ou uma bolinha cinza se ele ainda não foi marcado.
@@ -17,16 +16,12 @@ Aprenda a usar o poder da versão 13 do Next.js construindo um gerenciador de h�
 - Exiba uma mensagem quando não houverem hábitos cadastrados
 
 ### Página de cadastro de hábitos
-<img src="https://github.com/codante-io/mp-gerenciador-habitos-next/assets/6475893/f38b1654-d3e6-43a6-acc6-3b1275fb1cef" width="200" />
-
 
 - Crie um formulário para a pessoa cadastrar o nome do hábito
 - Implemente um botão para submeter
 - Implemente um botão para cancelar o cadastro e voltar para a página inicial.
 
 ### Página de detalhes do hábito
-<img src="https://github.com/codante-io/mp-gerenciador-habitos-next/assets/6475893/4fcf4dab-3f28-40ec-84cc-220f51616d72" width="200" />
-
 
 - Mostre o nome do hábito e um botão de voltar para a tela inicial
 - Mostre um calendário com os hábitos
@@ -49,6 +44,9 @@ Aprenda a usar o poder da versão 13 do Next.js construindo um gerenciador de h�
 Temos uma sugestão de design no Figma. Mas sinta-se livre para utilizar a criatividade e fazer o seu próprio design.
 
 🔗 [Link do Figma](https://www.figma.com/file/suvmja6210ggZOO6Cpehjl/Mini-Projetos---Codante.io?type=design&node-id=1533-149&mode=design&t=tptjmPrWwZzLsv9Z-0)
+
+![Group 20](https://github.com/codante-io/mp-gerenciador-habitos-next/assets/6475893/72c62cf3-f8da-4540-923e-0b064e2e0961)
+
 
 ## 👉🏽 Sobre esse mini-projeto
 ### Tecnologias sugeridas
