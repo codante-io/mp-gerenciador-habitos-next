@@ -50,8 +50,6 @@ Temos uma sugestão de design no Figma. Mas sinta-se livre para utilizar a criat
 
 🔗 [Link do Figma](https://www.figma.com/file/suvmja6210ggZOO6Cpehjl/Mini-Projetos---Codante.io?type=design&node-id=1533-149&mode=design&t=tptjmPrWwZzLsv9Z-0)
 
-![image](https://github.com/codante-io/mp-gerenciador-de-habitos-next/assets/6475893/5f35397c-f71e-4319-90b1-2ba970600a88)
-
 ## 👉🏽 Sobre esse mini-projeto
 ### Tecnologias sugeridas
 **NextJS 13**
