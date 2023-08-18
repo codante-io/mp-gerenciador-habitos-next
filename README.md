@@ -28,7 +28,7 @@ Aprenda a usar o poder da versão 13 do Next.js construindo um gerenciador de h�
   - A pessoa pode navegar entre os meses e verá, a cada dia do mês, um check se o hábito foi feito, um "x" se ele não foi feito ou uma bolinha cinza se ele ainda não foi marcado.
   - Quando a pessoa clica em um dia, o hábito deve ser marcado ou desmarcado.
     
-- Faça o deploy da sua aplicação e submeta no [Codante](https://codante.io/mini-projetos/gerenciador-de-habitos-nextjs)
+- Faça o deploy da sua aplicação e submeta no Codante.
 
 ## 🔨 Desafios extras para quem quer ir além
 - Implemente uma funcionalidade de "streak", ou seja, a quantidade de dias consecutivos que o hábito foi feito.
