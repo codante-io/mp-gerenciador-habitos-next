@@ -23,5 +23,4 @@ export default async function PaginaHabito({ params: { habito } }: { params: Hab
 
       <Calendario habito={formataHabito} cadeiaHabito={cadeiaHabito} />
     </main>
-  )
-}
+  )}

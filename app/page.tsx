@@ -1,4 +1,4 @@
-import { kv } from "@vercel/kv";
+// import { kv } from "@vercel/kv";
 import DeletaBotao from "./componentes/DeletaBotao";
 import Link from "next/link";
 import { WEEKDAYS } from "./utils/utils";
@@ -9,7 +9,7 @@ type Habitos = {
 } | null;
 
 export default async function Home() {
-  const habitos: Habitos = await kv.hgetall("habitos");
+  // const habitos: Habitos = await kv.hgetall("habitos");
 
   const hoje = new Date().getDay();
   const diasSemana = WEEKDAYS.slice(hoje + 1).concat(
@@ -24,7 +24,7 @@ export default async function Home() {
 
   return (
     <main className="container relative flex flex-col grap-8 px-4 pt-16 text-center">
-      {habitos === null ||
+      {/* {habitos === null ||
         (Object.keys(habitos).length === 0 && (
           <h1 className="mt-20 text-4xl font-ligth text-white font-display">
             Não existes hábitos Cadastrados
@@ -56,7 +56,7 @@ export default async function Home() {
         ))}
         <Link href={"novo-habito"} className="fixed text-center bottom-10 w-2/3 left-1/2 -translate-x-1/2 text-neutral-900 bg-[#45EDAD] font-display font-normal text-2xl p-2 rounded-md">
         Novo Hábito
-        </Link>
+        </Link> */}
     </main>
   );
 }

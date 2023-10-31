@@ -1,15 +1,10 @@
 import './globals.css'
-import type { Metadata } from 'next'
 import { Dosis, Inter } from 'next/font/google'
 import Image from 'next/image'
 
 const dosis = Dosis({ subsets: ['latin'], variable: '--font-dosis' });
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
-export const metadata: Metadata = {
-  title: "Criando Novos Hábitos",
-  description: "Construindo novos hábitos",
-}
 
 export default function RootLayout({
   children,
