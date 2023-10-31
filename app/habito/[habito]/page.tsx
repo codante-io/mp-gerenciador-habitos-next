@@ -1,6 +1,6 @@
 
-import IconeFlecha from "@/app/componentes/IconeFlecha";
-import Calendario from "@/app/componentes/Calendario";
+import IconeFlecha from "@/app/componentes/Icon";
+import Calendario from "@/app/componentes/DataYear";
 import { kv } from "@/app/";
 import Link from "next/link";
 

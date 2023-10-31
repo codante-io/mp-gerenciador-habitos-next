@@ -1,9 +1,9 @@
 'use client'
 import { WEEKDAYS } from "@/app/utils/utils";
 import { useEffect, useState } from "react";
-import Dia from "./Dia";
-import { trocaHabito } from "../acoes";
-import IconeFlexa from "./IconeFlecha";
+import Dia from "./Day";
+import { trocaHabito } from "../action";
+import IconeFlexa from "./Icon";
 
 type CalendarioProps = {
   habito: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import { deletaHabito } from "@/app/acoes";
+import { deletaHabito } from "@/app/action";
 
 import Image from "next/image";
 
