@@ -3,11 +3,11 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 function NovoHabito() {
-  async function newHabit(formData: FormData) {
+  async function NovoHabito(formData: FormData) {
     "use server";
 
     const habito = formData.get("habito");
-    await kv.hset("habits", { [habito as string]: {} });
+    await kv.hset("habitos", { [habito as string]: {} });
 
     revalidatePath("/");
     redirect("/");
@@ -19,7 +19,7 @@ function NovoHabito() {
         novo hábito
       </h1>
 
-      <form action={newHabit} className="flex flex-col gap-4 mt-4">
+      <form action={NovoHabito} className="flex flex-col gap-4 mt-4">
         <input
           type="text"
           name="habito"

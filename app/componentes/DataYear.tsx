@@ -25,51 +25,46 @@ function getAllDiasMes(mes: number, ano: number): Array<Date | null> {
 
 export default function CalendarioPagina(props: CalendarioProps) {
 
-  const currentDate = new Date();
-  const currentDay = currentDate.getDay()
-  const currentMonth = currentDate.getMonth()
-  const currentYear = currentDate.getFullYear()
-  const [mes, setMonth] = useState<number>(currentMonth)
-  const [ano, setYear] = useState<number>(currentYear)
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date())
-  const [daysInMonth, setDaysInMonth] = useState<Array<Date | null>>(getAllDiasMes(mes, ano))
+  const dataAtual = new Date();
+  const mesAtual = dataAtual.getMonth()
+  const anoAtual = dataAtual.getFullYear()
+
+
+  const [mes, setMes] = useState<number>(mesAtual)
+  const [ano, setAno] = useState<number>(anoAtual)
+  const [selecionaData, setSelecionaData] = useState(new Date())
+  const [diasMes, setDiasMes] = useState<Array<Date | null>>(getAllDiasMes(mes, ano))
 
   useEffect(() => {
-    setDaysInMonth(getAllDiasMes(mes, ano))
-    setSelectedDate(new Date(ano, mes, 1))
+    setDiasMes(getAllDiasMes(mes, ano))
+    setSelecionaData(new Date(ano, mes, 1))
   }, [mes, ano])
 
-  function goToPreviousMonth() {
-    // based on index
-    // jan = 0
-    // dec = 11
+  function mesAnterior() {
     if (mes === 0) {
-      setYear(ano - 1)
-      setMonth(11)
+      setAno(ano - 1)
+      setMes(11)
     } else {
-      setMonth(mes - 1)
+      setMes(mes - 1)
     }
   }
 
-  function goToNextMonth() {
-    // based on index
-    // jan = 0
-    // dec = 11
+  function proximoMes() {
     if (mes === 11) {
-      setYear(ano + 1)
-      setMonth(0)
+      setAno(ano + 1)
+      setMes(0)
     } else {
-      setMonth(mes + 1)
+      setMes(mes + 1)
     }
   }
 
-  function monthDictionary() {
-    const monthName = selectedDate.toLocaleString("pt-BR", { month: "long" })
-    return `${monthName.charAt(0).toUpperCase() + monthName.slice(1)} de ${selectedDate.getFullYear()}`
+  function meses() {
+    const mes = selecionaData.toLocaleString("pt-BR", { month: "long" })
+    return `${mes.charAt(0).toUpperCase() + mes.slice(1)} de ${selecionaData.getFullYear()}`
   }
 
-  function getDayString(day: Date) {
-    return `${ano.toString()}-${(mes + 1).toString().padStart(2, "0")}-${day.getDate().toString().padStart(2, "0")}`
+  function semana(dia: Date) {
+    return `${ano.toString()}-${(mes + 1).toString().padStart(2, "0")}-${dia.getDate().toString().padStart(2, "0")}`
   }
 
   return (
@@ -77,39 +72,39 @@ export default function CalendarioPagina(props: CalendarioProps) {
       <div className="flex justify-between mx-2 my-4 font-sans text-neutral-400">
         <button
           className="stroke-neutral-400"
-          onClick={goToPreviousMonth}
+          onClick={mesAnterior}
         >
           <IconeFlexa width={18} height={18} />
         </button>
-        <span>{monthDictionary()}</span>
+        <span>{meses()}</span>
         <button
           className="rotate-180 stroke-neutral-400"
-          onClick={goToNextMonth}
+          onClick={proximoMes}
         >
           <IconeFlexa width={18} height={18} /></button>
       </div>
       <div className="grid w-full grid-cols-7">
-        {WEEKDAYS.map((day => (
-          <div key={day} className="flex flex-col items-center p-2">
+        {WEEKDAYS.map((dia => (
+          <div key={dia} className="flex flex-col items-center p-2">
             <span className="font-sans text-xs font-light text-neutral-200">
-              {day}
+              {dia}
             </span>
           </div>
         )))}
-        {daysInMonth.map((day, index) => (
+        {diasMes.map((dia, index) => (
           <div
             key={index}
             className="flex flex-col items-center p-2"
             onClick={() => trocaHabito({
               habito: props.habito,
               cadeiaHabitos: props.cadeiaHabito,
-              data: getDayString((day as Date)),
-              realizado: props.cadeiaHabito ? props.cadeiaHabito[getDayString((day as Date))] : true
+              data: semana((dia as Date)),
+              realizado: props.cadeiaHabito ? props.cadeiaHabito[semana((dia as Date))] : true
             })}
           >
             <span className="font-sans text-xs font-light text-neutral-400">
-              {day?.getDate()}
-              {day && <Dia dia={props.cadeiaHabito ? props.cadeiaHabito[getDayString(day)] : undefined} />}
+              {dia?.getDate()}
+              {dia && <Dia dia={props.cadeiaHabito ? props.cadeiaHabito[semana(dia)] : undefined} />}
             </span>
           </div>
         ))}

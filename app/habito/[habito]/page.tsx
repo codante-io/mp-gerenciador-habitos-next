@@ -1,7 +1,6 @@
-
 import IconeFlecha from "@/app/componentes/Icon";
 import Calendario from "@/app/componentes/DataYear";
-import { kv } from "@/app/";
+import { kv } from "@vercel/kv";
 import Link from "next/link";
 
 type HabitoPaginaProps = {
@@ -10,7 +9,7 @@ type HabitoPaginaProps = {
 
 export default async function PaginaHabito({ params: { habito } }: { params: HabitoPaginaProps }) {
   const formataHabito = decodeURI(habito)
-  const cadeiaHabito: Record<string, boolean> | null = await kv.hget("habits", formataHabito)
+  const cadeiaHabito: Record<string, boolean> | null = await kv.hget("habitos", formataHabito)
 
   return (
     <main className="container relative flex flex-col gap-8 px-12 pt-16">

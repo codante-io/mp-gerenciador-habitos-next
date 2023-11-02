@@ -1,9 +1,10 @@
-'use client'
-// import { kv } from '@vercel/kv';
+'use server';
+
+import { kv } from '@vercel/kv';
 import { revalidatePath } from 'next/cache';
 
 export async function deletaHabito(habito: string) {
-  // await kv.hdel('habitos', habito);
+  await kv.hdel('habitos', habito);
 
   revalidatePath('/');
 }

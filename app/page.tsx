@@ -1,4 +1,4 @@
-// import { kv } from "@vercel/kv";
+import { kv } from "@vercel/kv";
 import DeletaBotao from "./componentes/Dell";
 import Link from "next/link";
 import { WEEKDAYS } from "./utils/utils";
@@ -9,17 +9,17 @@ type Habitos = {
 } | null;
 
 export default async function Home() {
-  const habitos: Habitos = await kv.hgetall("habitos");
+  const habitos: Habitos = await kv.hgetall("habito");
 
   const hoje = new Date().getDay();
   const diasSemana = WEEKDAYS.slice(hoje + 1).concat(
     WEEKDAYS.slice(0, hoje + 1)
   );
   const ultimosDiasSemana = WEEKDAYS.map((_, index) => {
-    const date = new Date();
-    date.setDate(date.getDate() - 1 - index);
+    const data = new Date();
+    data.setDate(data.getDate() - index);
 
-    return date.toISOString().slice(0, 10);
+    return data.toISOString().slice(0, 10);
   }).reverse();
 
   return (
