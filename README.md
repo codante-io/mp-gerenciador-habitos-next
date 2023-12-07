@@ -1,6 +1,6 @@
 # [📅 Gerenciador de Hábitos usando Next.js 13](https://codante.io/mini-projetos/gerenciador-de-habitos-nextjs)
 
-Aprenda a usar o poder da versão 13 do Next.js construindo um gerenciador de hábitos!
+Aprenda a usar o poder da versão 13+ do Next.js construindo um gerenciador de hábitos!
 
 ## 🔨 Requisitos
 - Utilize o Next.js na versão mais atual para construir a estrutura do projeto e gerenciar as rotas da aplicação.
