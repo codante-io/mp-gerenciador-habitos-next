@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: 255, 255, 255;
+  --primary: 0, 0, 0;
+  --secondary: 77, 77, 77;
+  --navy: 19, 58, 111;
+  --mint: 3, 214, 157;
+  --cherry: 248, 88, 88;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background-start-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  color: rgb(var(--primary));
+  background: rgb(var(--accent));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
